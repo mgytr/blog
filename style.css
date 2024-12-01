@@ -50,12 +50,16 @@ button.theme {
     border-radius: 9999px;
     border: white solid 2px;
     background-color: rgba(255, 255, 255, 0.02);
-    filter: grayscale();
     cursor:pointer;
     width: 45pt;
     height: 45pt;
     transition: cubic-bezier(0.215, 0.610, 0.355, 1) 0.3s;
     backdrop-filter: blur(50px);
+    background-image: url('/moon.png');
+    background-position: center;
+    background-size: 65% 65%;
+    background-repeat: no-repeat;
+    
     
 }
 button.theme:hover {

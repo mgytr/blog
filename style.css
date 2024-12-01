@@ -3,6 +3,8 @@ html {
     /*filter: invert(1);*/
     transition:cubic-bezier(0.075, 0.82, 0.165, 1) 1.8s;
     transition-property: filter;
+    width: 100vw;
+    overflow-x: hidden;
 }
 body {
     background-color: rgb(5, 5, 5);
@@ -37,6 +39,7 @@ div.header {
 }
 p {
     white-space: pre;
+    text-wrap:wrap;
 }
 
 button.theme {
@@ -83,13 +86,16 @@ body.whitetheme img {
 }
 div.post {
     background-color: #161515;
-    width: 450px;
-    height: 80px;
+    width: 85vw;
+    max-width: 500px;
+    height: fit-content;
     padding: 7px;
     padding-left: 10px;
     border-radius: .8em;
     text-wrap:stable;
     margin-bottom: 10px;
+    overflow: hidden;
+    display: block;
 }
 a:has(div.post) {
     text-decoration: none;

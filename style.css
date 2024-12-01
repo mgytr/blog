@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 html {
-    /*filter: invert(1);*/
     transition:cubic-bezier(0.075, 0.82, 0.165, 1) 1.8s;
     transition-property: filter;
     width: 100vw;

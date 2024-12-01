@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mgytr's blog</title>
+    <title>mgytr's blog - Hello World 2!</title>
     <link rel="stylesheet" href="style.css">
     <script>
         if (localStorage.getItem('whitetheme') === 'true') {
@@ -25,27 +25,32 @@
             }
         }
     </script>
+
+            
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.min.css">
+    
 </head>
 <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            hljs.highlightAll();
+        })
+    </script>
     <div class="header">
         <a href="/" class="mainpage">mgytr's blog</a> 
     </div>
-    <br>
-    <!--<div class="post">
-        <strong class="titleblog">Blogpost title</strong>
-        <br>
-        Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet...
-    </div>-->
-    <a href="/Hello World 2!.html"><div class="post">
-        <strong class="titleblog">Hello World 2!</strong>
-        <br>
-This is a second blogpost, to show that I can post more than one post!
-    </div></a><a href="/Hello World!.html"><div class="post">
-        <strong class="titleblog">Hello World!</strong>
-        <br>
-This is a test of my own blog I made myself!
-It can do bold text, italic text, s...
-    </div></a>
+    <h1>Hello World 2!</h1>
+    <div class="linebreak"><p>This is a second blogpost, to show that I can post more than one post!</p></div>
     <button class="theme">🌙</button>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script>
+        document.querySelectorAll('img').forEach((im)=>{
+            im.addEventListener('click', ()=>{
+                window.open(im.src, '_blank')
+            })
+        })
+    </script>
 </body>
 </html>

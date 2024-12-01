@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+html {
+    /*filter: invert(1);*/
+    transition:cubic-bezier(0.075, 0.82, 0.165, 1) 1.8s;
+    transition-property: filter;
+}
+body {
+    background-color: rgb(5, 5, 5);
+    color: white;
+    font-family: "Space Mono";
+    padding: 10px;
+}
+mark {
+    background-color: white;
+    border-radius: 5px;
+    padding-left: 3.5px;
+    padding-right: 3.5px;
+}
+a {
+    color: rgb(208, 208, 208);
+    transition:cubic-bezier(0.075, 0.82, 0.165, 1) 1.8s;
+    transition-property: filter;
+}
+a:hover {
+    color: rgb(240, 240, 240)
+}
+/*body.whitetheme a:not(.mainpage) {
+    filter: invert(1);
+}*/
+a.mainpage {
+    color: white;
+    font-size: 14pt;
+}
+div.header {
+    padding: 6px;
+    padding-top: 8px;
+}
+p {
+    white-space: pre;
+}
+
+button.theme {
+    position: fixed;
+    bottom: 12px;
+    right: 12px;
+    font-size: 25pt;
+    border-radius: 9999px;
+    border: white solid 2px;
+    background-color: rgba(255, 255, 255, 0.02);
+    filter: grayscale();
+    cursor:pointer;
+    width: 45pt;
+    height: 45pt;
+    transition: cubic-bezier(0.215, 0.610, 0.355, 1) 0.3s;
+    backdrop-filter: blur(50px);
+    
+}
+button.theme:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+}
+pre {
+
+    filter: grayscale();
+    border-radius: .5em !important;
+    margin-bottom: 10px !important;
+}
+code:not([class]) {
+    background-color: #272822;
+    font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
+    padding: 8px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    filter: grayscale();
+    border-radius: .5em !important;
+}
+img {
+    display: block;
+    max-width: 45vw;
+    padding-bottom: 10px;
+}
+body.whitetheme img {
+    filter: invert(1)
+}
+div.post {
+    background-color: #161515;
+    width: 450px;
+    height: 80px;
+    padding: 7px;
+    padding-left: 10px;
+    border-radius: .8em;
+    text-wrap:stable;
+    margin-bottom: 10px;
+}
+a:has(div.post) {
+    text-decoration: none;
+}
+strong.titleblog {
+    font-size: large;
+}

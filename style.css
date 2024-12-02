@@ -55,6 +55,7 @@ button.theme {
     background-position: center;
     background-size: 50% 50%;
     background-repeat: no-repeat;
+    z-index: 5;
     
     
 }

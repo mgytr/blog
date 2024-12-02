@@ -25,9 +25,6 @@ a {
 a:hover {
     color: rgb(240, 240, 240)
 }
-/*body.whitetheme a:not(.mainpage) {
-    filter: invert(1);
-}*/
 a.mainpage {
     color: white;
     font-size: 14pt;

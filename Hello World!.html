@@ -99,6 +99,7 @@ printMessage();
 <p><code>This is an inline codeblock</code></p>
 <p><img src="/imgs/Pasted image 20241201224910.png">You can click on an image to show it in fullscreen</p></div>
     <script>
+        setTimeout(()=>{
         const scriptTag = document.createElement('script');
 scriptTag.src = "https://utteranc.es/client.js";
 scriptTag.setAttribute('repo', 'mgytr/blog');
@@ -106,7 +107,7 @@ scriptTag.setAttribute('issue-term', 'url');
 scriptTag.setAttribute('theme', `github-${document.body.classList.contains("whitetheme") ? "light" : "dark"}`);
 scriptTag.setAttribute('crossorigin', 'anonymous');
 scriptTag.async = true;
-document.body.appendChild(scriptTag);
+document.body.appendChild(scriptTag)}, 200)
 
     </script>
     <button class="theme"></button>

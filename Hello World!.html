@@ -15,7 +15,8 @@
 
         window.onload = ()=>{
 
-            const interval = setInterval(()=>{
+            /*const interval = setInterval(()=>{
+            
             if (document.querySelector('.utterances-frame')) {
                 clearInterval(interval);
                 const theme = 'github-light'
@@ -25,7 +26,7 @@
                 };
                 const iframe = document.querySelector('.utterances-frame');
                 iframe.contentWindow.postMessage(message, 'https://utteranc.es');
-            }}, 200)
+            }}, 200)*/
             document.querySelector('button.theme').onclick = ()=>{
                 if (localStorage.getItem('whitetheme') === 'true') {
                     localStorage.setItem('whitetheme', 'false')
@@ -97,12 +98,16 @@ printMessage();
 </code></pre>
 <p><code>This is an inline codeblock</code></p>
 <p><img src="/imgs/Pasted image 20241201224910.png">You can click on an image to show it in fullscreen</p></div>
-    <script src="https://utteranc.es/client.js"
-        repo="mgytr/blog"
-        issue-term="url"
-        theme="github-dark"
-        crossorigin="anonymous"
-        async>
+    <script>
+        const scriptTag = document.createElement('script');
+scriptTag.src = "https://utteranc.es/client.js";
+scriptTag.setAttribute('repo', 'mgytr/blog');
+scriptTag.setAttribute('issue-term', 'url');
+scriptTag.setAttribute('theme', `github-${document.body.classList.contains("whitetheme") ? "light" : "dark"}`);
+scriptTag.setAttribute('crossorigin', 'anonymous');
+scriptTag.async = true;
+document.body.appendChild(scriptTag);
+
     </script>
     <button class="theme"></button>
     <div class="imagepreview">

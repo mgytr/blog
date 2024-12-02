@@ -155,3 +155,6 @@ a:has(div.post) {
 strong.titleblog {
     font-size: large;
 }
+body.whitetheme div.utterances {
+    filter: invert(1);
+}

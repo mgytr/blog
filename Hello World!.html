@@ -8,9 +8,24 @@
     <script>
         if (localStorage.getItem('whitetheme') === 'true') {
             document.documentElement.style.filter = 'invert()'
-            setTimeout(()=>{document.body.className = 'whitetheme'}, 50)
+            setTimeout(()=>{document.body.className = 'whitetheme';
+            }, 50)
+            
         }
+
         window.onload = ()=>{
+
+            const interval = setInterval(()=>{
+            if (document.querySelector('.utterances-frame')) {
+                clearInterval(interval);
+                const theme = 'github-light'
+                const message = {
+                    type: 'set-theme',
+                    theme: theme
+                };
+                const iframe = document.querySelector('.utterances-frame');
+                iframe.contentWindow.postMessage(message, 'https://utteranc.es');
+            }}, 200)
             document.querySelector('button.theme').onclick = ()=>{
                 if (localStorage.getItem('whitetheme') === 'true') {
                     localStorage.setItem('whitetheme', 'false')
@@ -22,7 +37,36 @@
                     document.documentElement.style.filter = 'invert()'
                     document.body.className = 'whitetheme'
                 }
+                if (document.querySelector('.utterances-frame')) {
+                    const theme = document.body.classList.contains('whitetheme') ? 'github-light' : 'github-dark'
+                    const message = {
+                        type: 'set-theme',
+                        theme: theme
+                    };
+                    const iframe = document.querySelector('.utterances-frame');
+                    iframe.contentWindow.postMessage(message, 'https://utteranc.es');
+                }
             }
+            let imgpreview = document.querySelector('div.imagepreview')
+        imgpreview.addEventListener('click', (e)=>{
+            if (e.target === imgpreview || e.target === imgpreview.querySelector('button.closebtn')) {
+                imgpreview.style.visibility = 'hidden'
+                imgpreview.style.opacity = '0'
+                document.body.style.overflowY = 'scroll'
+            }
+        })
+        document.querySelectorAll('img').forEach((im)=>{
+            if (im.parentElement === imgpreview) {return}
+            im.addEventListener('click', ()=>{
+                
+                
+                imgpreview.style.visibility = 'visible'
+                imgpreview.querySelector('img').src = im.src
+                imgpreview.style.opacity = '1'
+                document.body.style.overflowY = 'hidden'
+            })
+            
+        })
         }
     </script>
 
@@ -67,29 +111,6 @@ printMessage();
     </div>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
-    <script>
-        let imgpreview = document.querySelector('div.imagepreview')
-        imgpreview.addEventListener('click', (e)=>{
-            if (e.target === imgpreview || e.target === imgpreview.querySelector('button.closebtn')) {
-                imgpreview.style.visibility = 'hidden'
-                imgpreview.style.opacity = '0'
-                document.body.style.overflowY = 'scroll'
-            }
-        })
-        document.querySelectorAll('img').forEach((im)=>{
-            if (im.parentElement === imgpreview) {return}
-            im.addEventListener('click', ()=>{
-                
-                
-                imgpreview.style.visibility = 'visible'
-                imgpreview.querySelector('img').src = im.src
-                imgpreview.style.opacity = '1'
-                document.body.style.overflowY = 'hidden'
-            })
-            
-        })
-
-    </script>
     
 </body>
 </html>

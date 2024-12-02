@@ -61,14 +61,34 @@ printMessage();
         async>
     </script>
     <button class="theme"></button>
+    <div class="imagepreview">
+        <button class="closebtn">ⓧ</button>
+        <img src="">
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
     <script>
-        document.querySelectorAll('img').forEach((im)=>{
-            im.addEventListener('click', ()=>{
-                window.open(im.src, '_blank')
-            })
+        let imgpreview = document.querySelector('div.imagepreview')
+        imgpreview.addEventListener('click', (e)=>{
+            if (e.target === imgpreview || e.target === imgpreview.querySelector('button.closebtn')) {
+                imgpreview.style.visibility = 'hidden'
+                imgpreview.style.opacity = '0'
+                document.body.style.overflowY = 'scroll'
+            }
         })
+        document.querySelectorAll('img').forEach((im)=>{
+            if (im.parentElement === imgpreview) {return}
+            im.addEventListener('click', ()=>{
+                
+                
+                imgpreview.style.visibility = 'visible'
+                imgpreview.querySelector('img').src = im.src
+                imgpreview.style.opacity = '1'
+                document.body.style.overflowY = 'hidden'
+            })
+            
+        })
+
     </script>
     
 </body>
